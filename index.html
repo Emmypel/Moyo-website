@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3ee">
+<title>For Moyo ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff5e9;--paper:#fffaf5;--pink:#f5c5ce;--rose:#b94f61;--ink:#613b3b;--muted:#9b7770}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}.screen{min-height:100svh;display:none;align-items:center;justify-content:center;padding:32px 18px;position:relative;overflow:hidden}
+.screen.active{display:flex;animation:appear .7s ease both}.wrap{width:min(940px,100%);text-align:center;position:relative;z-index:2}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;color:var(--muted)}
+h1,h2{font-family:'Playfair Display',serif;font-weight:500}h1{font-size:clamp(2.6rem,8vw,5.3rem);line-height:1.05;margin:12px 0}h2{font-size:clamp(2rem,6vw,3.5rem);margin:8px 0 14px}
+.script{font-family:'Caveat',cursive}.sub{color:var(--muted);line-height:1.8;max-width:570px;margin:12px auto}
+.btn{border:0;border-radius:999px;padding:14px 25px;background:var(--rose);color:white;box-shadow:0 9px 22px #b94f6130;transition:.2s}
+.btn:hover{transform:translateY(-3px)}.btn.light{background:#fff9f4;color:var(--rose);border:1px solid #efd3d2;box-shadow:none}
+.gift{font-size:100px;display:block;animation:bob 2s ease-in-out infinite;margin:0 auto 15px}
+.tiny{font-size:.78rem;color:#a98780;margin-top:18px}.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.petal{position:absolute;top:-50px;animation:fall linear infinite;opacity:.75}.rose-bg{background:radial-gradient(ellipse at top,#ffe3e6,transparent 55%),linear-gradient(140deg,#fff5e9,#fce5d7)}
+.hero-art{width:min(390px,75vw);height:220px;object-fit:cover;border-radius:28px;margin:16px auto;box-shadow:0 14px 35px #89534a20}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px auto;max-width:780px}
+.photo{background:#fff;padding:9px 9px 28px;box-shadow:0 8px 25px #754b3b20;transform:rotate(var(--tilt));transition:.25s}
+.photo:hover{transform:rotate(0) translateY(-6px)}.photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#f4d9d5}
+.photo span{display:block;font-family:'Caveat',cursive;font-size:1.1rem;margin-top:8px}
+.letter{max-width:680px;margin:24px auto;background:repeating-linear-gradient(var(--paper),var(--paper) 39px,#f1dfd9 40px);padding:34px clamp(22px,6vw,55px);text-align:left;box-shadow:0 16px 45px #79504418;border:1px solid #f0dfd7;line-height:2;font-family:'Caveat',cursive;font-size:clamp(1.25rem,3vw,1.65rem);white-space:pre-line}
+.ask-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}.heart{color:#c65b70;display:inline-block;animation:beat 1.2s infinite}
+.footer{font-size:.75rem;color:#ad8b83;margin-top:35px}.back{position:absolute;top:20px;left:20px;border:1px solid #e9cfc7;background:#fff8f2;color:var(--rose);padding:9px 15px;border-radius:30px;z-index:5}
+.yes-note{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);color:var(--rose);margin:20px 0}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes beat{50%{transform:scale(1.3)}}@keyframes fall{to{transform:translateY(110vh) rotate(300deg);opacity:0}}
+@media(max-width:560px){.gallery{grid-template-columns:repeat(2,1fr);gap:10px}.photo{padding:7px 7px 23px}.letter{padding:24px 20px}.gift{font-size:82px}}
+</style></head>
+<body>
+<div class="petals" id="petals"></div>
+<section class="screen active" id="intro"><div class="wrap"><div class="eyebrow">A little something, made just for you</div><div class="gift">🎁</div><h1 class="script">For you, my Moyo.</h1><p class="sub">I have a tiny surprise for someone who makes my world a little brighter. Ready, pretty girl?</p><button class="btn" onclick="go('welcome')">Open your surprise ♡</button><div class="tiny">P.S. You might blush a little. Just saying.</div></div></section>
+<section class="screen rose-bg" id="welcome"><button class="back" onclick="go('intro')">← Back</button><div class="wrap"><img class="hero-art" src="assets/cover-flowers.svg" alt="Soft pink flowers"><div class="eyebrow">To my favourite person</div><h1>Hi, Moyo <span class="heart">♥</span></h1><p class="sub">If I could wrap a feeling and give it to you, it would be the happiness I get whenever you cross my mind.</p><p class="script" style="font-size:1.8rem;color:#b94f61">You make ordinary moments feel magical.</p><button class="btn" onclick="go('gallery')">A few little memories →</button></div></section>
+<section class="screen" id="gallery"><button class="back" onclick="go('welcome')">← Back</button><div class="wrap"><div class="eyebrow">Little moments, big feelings</div><h2>Our kind of beautiful</h2><p class="sub">Replace these sample pictures with your own photos. Put them in the assets folder and keep the filenames shown below.</p><div class="gallery">
+<div class="photo" style="--tilt:-3deg"><img src="assets/cover-flowers.svg" alt="Flower illustration"><span>Little moments ♡</span></div>
+<div class="photo" style="--tilt:2deg"><img src="assets/pink-roses.svg" alt="Pink roses illustration"><span>Pretty things</span></div>
+<div class="photo" style="--tilt:3deg"><img src="assets/heart-frame.svg" alt="Heart illustration"><span>Just because</span></div>
+<div class="photo" style="--tilt:2deg"><img src="assets/soft-bokeh.svg" alt="Soft romantic background"><span>My happy place</span></div>
+<div class="photo" style="--tilt:-2deg"><img src="assets/pink-roses.svg" alt="Rose illustration"><span>Golden moments</span></div>
+<div class="photo" style="--tilt:3deg"><img src="assets/cover-flowers.svg" alt="Flower illustration"><span>For my Moyo</span></div>
+</div><button class="btn" onclick="go('letter')">One thing I want you to know →</button></div></section>
+<section class="screen rose-bg" id="letter"><button class="back" onclick="go('gallery')">← Back</button><div class="wrap"><div class="eyebrow">A note from my heart</div><h2 class="script">From me to you</h2><div class="letter">Dear Moyo,
+
+I don't know if I say it enough, but there is something so lovely about you. Your smile has a way of making a day feel lighter, and even the thought of you can put me in the happiest mood.
+
+I love the little things that make you YOU. I hope you never forget how special you are, how much you deserve to be cherished, and how easily you make me smile.
+
+So here's a little reminder: someone is thinking about you, smiling at their screen, and feeling very lucky to know you.
+
+With a whole lot of affection,
+Your favourite admirer ♡</div><button class="btn" onclick="go('question')">One last question…</button></div></section>
+<section class="screen" id="question"><div class="wrap"><img class="hero-art" src="assets/pink-roses.svg" alt="Pink roses"><div class="eyebrow">Okay, deep breath…</div><h1>Moyo, will you go out with me?</h1><p class="sub">I'd love to take you on a proper date, make you smile, share some laughs, and create a sweet memory with you.</p><div class="ask-buttons"><button class="btn" onclick="sayYes()">Yes, I'd love to! 💗</button><button class="btn light" onclick="sayMaybe()">Can I think about it? 😊</button></div><div class="tiny" id="reply">No pressure, beautiful. Whatever your answer, you deserve to feel special.</div></div></section>
+<section class="screen rose-bg" id="celebrate"><div class="wrap"><div class="hero-art" style="font-size:5rem;display:grid;place-items:center">🥹💖🌹</div><div class="eyebrow">The beginning of something lovely</div><h1 class="script">You just made me smile, Moyo!</h1><div class="yes-note">I can't wait to see you. ♡</div><p class="sub">Now, let's plan that date. You, me, good food, and a memory worth keeping.</p><p class="script" style="font-size:1.8rem">P.S. You look extra pretty when you smile.</p><button class="btn" onclick="go('intro')">Replay our little surprise ↻</button></div></section>
+<script>
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(id==='welcome')makePetals()}
+function makePetals(){const area=document.getElementById('petals');area.innerHTML='';const icons=['🌸','🌷','💗','✿'];for(let i=0;i<24;i++){const p=document.createElement('span');p.className='petal';p.textContent=icons[Math.floor(Math.random()*icons.length)];p.style.left=Math.random()*100+'%';p.style.animationDuration=(7+Math.random()*8)+'s';p.style.animationDelay=(Math.random()*7)+'s';p.style.fontSize=(14+Math.random()*15)+'px';area.appendChild(p)}}
+function sayYes(){go('celebrate');for(let i=0;i<30;i++){const e=document.createElement('span');e.textContent=['💗','💕','🌸','✨'][Math.floor(Math.random()*4)];e.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-30px;font-size:${18+Math.random()*22}px;z-index:20;pointer-events:none;animation:fall ${3+Math.random()*3}s linear forwards`;document.body.appendChild(e);setTimeout(()=>e.remove(),6500)}}
+function sayMaybe(){document.getElementById('reply').textContent='Of course, take your time. No pressure at all — I just wanted you to know how I feel. ♡'}
+</script></body></html>
